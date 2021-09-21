@@ -1,0 +1,88 @@
+.select-box{
+    display: flex;
+    width:400px;
+    flex-direction: column;
+}
+
+.select-box .options-container{
+    background: #2f3640;
+    color: #f5f6fa;
+    max-height:0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+}
+
+.selected{
+    background: #2f3640;
+    color: #f5f6fa;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    order: 0;
+}
+
+.select-box .options-container.active{
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select-box .options-container.active + .selected .arrow{
+    transform: rotateX(180deg);
+    transition: all 0.4s;
+}
+
+.select-box .options-container::-webkit-scrollbar{
+    width: 8px;
+    background: #0d141f;
+    border-radius: 0 8px 8px 0;
+}
+.select-box .options-container::-webkit-scrollbar-thumb{
+    background: #525861;
+    border-radius: 0 8px 8px 0;
+}
+.select-box .option, 
+.selected{
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.selected{
+    display: inline-flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    position: relative;
+}
+
+.selected-content{
+    display: inline-flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.select-box .arrow{
+    position: absolute;
+    right: .75rem;
+}
+
+.select-box .option:hover{
+    background: #414b57;
+}
+
+.select-box label{
+    cursor: pointer;
+}
+
+.select-box .option .radio {
+    display: none;
+}
+
+.slds-input-has-icon .slds-input__icon {
+    /* fill: #f5f6fa; */
+}
